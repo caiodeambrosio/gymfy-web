@@ -26,6 +26,7 @@ function App() {
         >
           Count is {count}
         </button>
+        <a href="gymfy://">Abrir meu Aplicativo</a>
       </section>
 
       <div className="ticks"></div>
