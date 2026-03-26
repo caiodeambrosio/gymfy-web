@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import logo from "./assets/logo.svg";
 
 const SignupPage = () => {
   const [status, setStatus] = useState("verifying");
@@ -51,7 +52,7 @@ const SignupPage = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const Loading = ({ size = "h-12 w-12" }) => {
+  const Loading = ({ size = "h-12 w-12" }: { size?: string }) => {
     return (
       <div className="flex items-center justify-center">
         <div
@@ -80,7 +81,7 @@ const SignupPage = () => {
           flex-1
           flex-col 
           relative
-          bg-gradient-to-r 
+          bg-linear-to-r 
           from-black/40 
           to-transparent
           md:flex-row
@@ -91,12 +92,12 @@ const SignupPage = () => {
             FORGE <br /> YOUR <br /> LEGACY
           </h1>
         </div>
-        <div className="flex  flex-1 justify-center items-center p-16 gap-8">
+        <div className="flex  flex-1 justify-center items-center p-16">
           {status === "verifying" ? (
             <Loading />
           ) : (
-            <div className="flex  flex-col items-center text-center">
-              <img className="w-25" src="src/assets/logo-inverted.svg" />
+            <div className="flex  flex-col items-center text-center  gap-8">
+              <img src={logo} className="w-25" />
               <div>
                 <h2 className="font-headline italic font-black text-4xl text-white uppercase tracking-tight">
                   TUDO CERTO!
